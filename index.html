@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' cdn.jsdelivr.net;">
+		<title>Blog</title>
+
+		<script>
+		window.MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']],
+				displayMath: [['$$', '$$'], ['\\[', '\\]']],
+
+				processEscapes: true, // Allows using \$ to write a literal dollar sign
+
+				// Auto-number equations if use \begin{equation} or \begin{align}
+				tags: 'ams',
+			},
+			options: {
+				ignoreHtmlClass: 'tex2jax_ignore'
+			},
+			svg: { fontCache: 'global' }
+		};
+		</script>
+		<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" crossorigin="anonymous"></script>
+		<script type="module" crossorigin src="/assets/index-C3XPM14b.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-DDjRASOY.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<h1><a href="/">Brain Dump</a></h1>
+		</header>
+
+		<main class="layout">
+			<aside class="sidebar">
+				<h2>POSTS LIST</h2>
+				<nav id="tree"></nav>
+			</aside>
+			<button id="sidebar-hide_show" class="sidebar-toggle" aria-label="Toggle sidebar"></button>
+			<article class="content" id="content">
+				<h2>Welcome</h2>
+				<p>Select a post from the sidebar.</p>
+			</article>
+		</main>
+
+
+		<script>
+		const MOBILE_SIZE = 768;
+		const layout = document.querySelector('.layout');
+		const toggleBtn = document.getElementById('sidebar-hide_show');
+		let isMobile = window.innerWidth <= MOBILE_SIZE;
+
+		const toggleBtnTxt = () => {
+			const isCollapsed = layout.classList.contains('sidebar-collapsed');
+
+			if (isMobile) {
+				toggleBtn.innerHTML = isCollapsed ? '&lt;&lt;' : '&gt;&gt;';
+			} else {
+				toggleBtn.innerHTML = isCollapsed ? '&gt;&gt;' : '&lt;&lt;';
+			}
+		}
+
+		toggleBtn.addEventListener('click', () => {
+			layout.classList.toggle('sidebar-collapsed');
+			toggleBtnTxt();
+		});
+
+		const handleResize = () => {
+			const nowMobile = window.innerWidth <= MOBILE_SIZE;
+			if (nowMobile !== isMobile) {
+				layout.classList.remove('sidebar-collapsed');
+				isMobile = nowMobile;
+			}
+			toggleBtnTxt();
+		}
+
+		window.addEventListener('resize', handleResize);
+		window.addEventListener('load', handleResize); // This looks weird but is needed (though the name could be better)
+		</script>
+	</body>
+</html>
