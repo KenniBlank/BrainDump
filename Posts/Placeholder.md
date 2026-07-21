@@ -4,6 +4,13 @@ Welcome! This page exists to test the rendering capabilities of the site.
 
 ---
 
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
+
 # Text
 
 Normal text.
@@ -105,19 +112,6 @@ npm run dev
 
 ![Placeholder](https://placehold.co/800x300)
 
----
-
-# HTML
-
-<details>
-<summary>Click to expand</summary>
-
-Your Markdown renderer supports embedded HTML.
-
-</details>
-
----
-
 # MathJax
 
 ## Inline Math
@@ -204,7 +198,7 @@ $$
 f(x)=
 \begin{cases}
 x^2, & x\ge0 \
--x, & x<0
+-x, & x<1
 \end{cases}
 $$
 
@@ -250,54 +244,8 @@ $$
 
 ---
 
-## Schrödinger Equation
-
-$$
-i\hbar\frac{\partial\Psi}{\partial t}
-=====================================
-
-\hat H\Psi
-$$
-
----
-
-## Numbered Equation
-
-\begin{equation}
-E=mc^2
-\end{equation}
-
----
-
-## Aligned Equations
-
-\begin{align}
-(a+b)^2 &= a^2+2ab+b^2 \
-(a-b)^2 &= a^2-2ab+b^2
-\end{align}
-
----
-
 ## Escaping
 
 These should **not** become math:
 
 $100
-
-$
-
----
-
-# Emoji
-
-😀 🚀 🐧 ⚡ 📚 🔬
-
----
-
-# Footnote
-
-Here's a sentence with a footnote.[^1]
-
-[^1]: If your Markdown parser supports footnotes.
-
----
