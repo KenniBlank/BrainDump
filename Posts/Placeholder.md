@@ -110,7 +110,7 @@ npm run dev
 
 # Images
 
-![Placeholder](https://placehold.co/800x300)
+![Placeholder](Posts/images/placeholderImage.jpg)
 
 # MathJax
 
