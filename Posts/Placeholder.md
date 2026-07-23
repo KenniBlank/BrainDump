@@ -110,7 +110,7 @@ npm run dev
 
 # Images
 
-![Placeholder](Posts/images/placeholderImage.jpg)
+![Placeholder](Posts/images/picture_2026-05-09_14-14-27.jpg)
 
 # MathJax
 
@@ -244,8 +244,6 @@ $$
 
 ---
 
-## Escaping
+## Escaping (Doesn't work yet)
 
-These should **not** become math:
-
-$100
+These should **not** become math: \$100\$
