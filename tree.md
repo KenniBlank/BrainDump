@@ -1,4 +1,5 @@
+- External Learning
+	- [RAG-101](<Posts/External Learning/RAG-101.md>)
 - Projects
 	- [Brain Dump](<Posts/Projects/Brain Dump.md>)
 - [Placeholder](<Posts/Placeholder.md>)
-- [RAG-101](<Posts/RAG-101.md>)
