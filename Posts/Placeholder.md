@@ -2,6 +2,8 @@
 
 Welcome! This page exists to test the rendering capabilities of the site.
 
+<!--[[This Website]]-->
+
 ---
 
 # Header 1
@@ -207,18 +209,7 @@ $$
 ## Greek Letters
 
 $$
-\alpha,;
-\beta,;
-\gamma,;
-\delta,;
-\epsilon,;
-\theta,;
-\lambda,;
-\mu,;
-\pi,;
-\sigma,;
-\phi,;
-\omega
+\alpha,\ \beta,\ \gamma,\ \delta,\ \epsilon,\ \theta,\ \lambda,\ \mu,\ \pi,\ \sigma, \phi, \omega
 $$
 
 ---
