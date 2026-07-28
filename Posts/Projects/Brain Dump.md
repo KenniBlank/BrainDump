@@ -29,6 +29,7 @@ The file `tree.md` is a special one, it is the navigation page that lists all th
 ---
 Structure example of tree.md
 ---
+
 - Projects
 	- [Brain Dump](<Posts/Projects/Brain Dump.md>)
 - [Placeholder](<Posts/Placeholder.md>)
