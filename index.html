@@ -25,8 +25,8 @@
 		};
 		</script>
 		<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" crossorigin="anonymous"></script>
-		<script type="module" crossorigin src="/BrainDump/assets/index-vI_R811I.js"></script>
-		<link rel="stylesheet" crossorigin href="/BrainDump/assets/index-BTlyJJoz.css">
+		<script type="module" crossorigin src="/BrainDump/assets/index-Di6vAI3f.js"></script>
+		<link rel="stylesheet" crossorigin href="/BrainDump/assets/index-Dz0BPrzH.css">
 	</head>
 	<body>
 		<header class="site-header">
@@ -36,8 +36,14 @@
 		<main class="layout">
 			<aside class="sidebar">
 				<h2>POSTS LIST</h2>
+				<label class="search-box">
+					<input id="post-search" placeholder="⌕ Search posts..." autocomplete="off" type="search" />
+				</label>
 				<nav id="tree"></nav>
 			</aside>
+
+			<div id="resizer" class="resizer"></div>
+
 			<button id="sidebar-hide_show" class="sidebar-toggle" aria-label="Toggle sidebar"></button>
 			<article class="content" id="content">
 				<h2>Welcome</h2>
@@ -45,6 +51,7 @@
 			</article>
 		</main>
 
+		<button id="back-to-top" class="back-to-top" aria-label="Scroll to top">&#9650;</button>
 
 		<script>
 		const layout = document.querySelector('.layout');
@@ -74,6 +81,101 @@
 		});
 
 		window.addEventListener('load', toggleBtnTxt);
+		window.addEventListener('load', () => {
+			// Check for a saved width and apply it
+			const savedWidth = localStorage.getItem('customSidebarWidth');
+			if (savedWidth) {
+				layout.style.setProperty('--user-width', `${savedWidth}px`);
+			}
+		});
+
+		// ===========================================================================
+		// ---------------------------Resize Sidebar:---------------------------------
+		// ===========================================================================
+		const resizer = document.getElementById('resizer');
+		let isResizingState = false;
+
+		resizer.addEventListener('mousedown', (e) => {
+			isResizingState = true;
+			layout.classList.add('is-resizing'); // Disables CSS transition during drag
+			document.body.style.cursor = 'col-resize';
+			document.body.style.userSelect = 'none';
+		});
+
+		document.addEventListener('mousemove', (e) => {
+			if (!isResizingState) return;
+
+			let newWidth = e.clientX;
+
+			// Set min and max limits for the sidebar
+			if (newWidth < 200) newWidth = 200;
+			if (newWidth > 600) newWidth = 600;
+
+			layout.style.setProperty('--user-width', `${newWidth}px`);
+		});
+
+		document.addEventListener('mouseup', () => {
+			if (isResizingState) {
+				isResizingState = false;
+				layout.classList.remove('is-resizing');
+				document.body.style.cursor = 'default';
+				document.body.style.userSelect = 'auto';
+
+				// Get the final computed width and save it to localStorage
+				const finalWidth = getComputedStyle(layout).getPropertyValue('--sidebar-width');
+				localStorage.setItem('customSidebarWidth', parseInt(finalWidth));
+			}
+		});
+
+		// ================================================
+		// ..................Scroll to Top.................
+		// ================================================
+		const backToTopBtn = document.getElementById('back-to-top');
+
+		// Show button only after scrolling down 300px
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 300) {
+				backToTopBtn.classList.add('visible');
+			} else {
+				backToTopBtn.classList.remove('visible');
+			}
+		});
+		// Scroll to the top on click
+		backToTopBtn.addEventListener('click', () => {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		});
+
+		// ================================================
+		// ..................Search Feature................
+		// ================================================
+		const search = document.getElementById("post-search");
+
+		search.addEventListener("input", () => {
+			const query = search.value.trim().toLowerCase();
+
+			document.querySelectorAll("#tree a").forEach((link) => {
+				const item = link.closest("li");
+				if (!item) return;
+				item.hidden = query !== "" && !link.textContent.toLowerCase().includes(query);
+			});
+		});
+
+		document.addEventListener("keydown", (e) => {
+			if (e.key === "/" && document.activeElement !== search && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+				e.preventDefault();
+				search.focus();
+			}
+
+			if (e.key === "Escape" && document.activeElement === search) {
+				e.preventDefault();
+				search.blur();
+			}
+		});
+
 		</script>
+
 	</body>
 </html>
