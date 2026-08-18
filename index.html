@@ -163,6 +163,7 @@
 			});
 		});
 
+		isModifierDown = false
 		document.addEventListener("keydown", (e) => {
 			if (e.key === "/" && document.activeElement !== search && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
 				e.preventDefault();
@@ -172,6 +173,20 @@
 			if (e.key === "Escape" && document.activeElement === search) {
 				e.preventDefault();
 				search.blur();
+			}
+
+			if (e.key === "Alt") {
+				isModifierDown = true;
+			}
+
+			if (isModifierDown && e.key === "a") {
+				toggleBtn.click();
+			}
+		});
+
+		document.addEventListener("keyup", (e) => {
+			if (e.key === "Alt") {
+				isModifierDown = false;
 			}
 		});
 
