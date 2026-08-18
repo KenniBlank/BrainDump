@@ -70,7 +70,7 @@ https://github.com/highlightjs/highlight.js/issues/2277`),i=e,r=t),n===void 0&&(
 			<h2>Failed to load post</h2>
 			<p>The requested document could not be retrieved.</p>
 			</div>
-			`)}}async function It(){try{Ot.innerHTML=jt(await Nt(`tree.md`))}catch(e){console.error(`Error loading navigation tree:`,e),Ot.innerHTML=`<p class='error'>Failed to load navigation.</p>`}let e=new URL(window.location),t=e.searchParams.get(`post`);if(e.pathname!==Dt){let e=new URL(Dt,window.location.origin);t&&e.searchParams.set(`post`,t),window.history.replaceState({path:t},``,e)}t&&await Ft(t,!1)}Ot.addEventListener(`click`,async e=>{let t=e.target.closest(`a`);if(!t)return;e.preventDefault();let n=t.getAttribute(`href`);n&&await Ft(n)}),window.addEventListener(`popstate`,async e=>{e.state&&e.state.path?await Ft(e.state.path,!1):At(`
+		`)}}async function It(){try{Ot.innerHTML=jt(await Nt(`tree.md`))}catch(e){console.error(`Error loading navigation tree:`,e),Ot.innerHTML=`<p class='error'>Failed to load navigation.</p>`}let e=new URL(window.location),t=e.searchParams.get(`post`);if(e.pathname!==Dt){let e=new URL(Dt,window.location.origin);t&&e.searchParams.set(`post`,t),window.history.replaceState({path:t},``,e)}t&&await Ft(t,!1)}Ot.addEventListener(`click`,async e=>{let t=e.target.closest(`a`);if(!t)return;e.preventDefault();let n=t.getAttribute(`href`);n&&await Ft(n)}),window.addEventListener(`popstate`,async e=>{e.state&&e.state.path?await Ft(e.state.path,!1):At(`
 			<h2>Welcome</h2>
 			<p>Select a post from the left.</p>
 			`)}),window.addEventListener(`load`,It);

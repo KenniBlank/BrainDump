@@ -25,7 +25,7 @@
 		};
 		</script>
 		<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" crossorigin="anonymous"></script>
-		<script type="module" crossorigin src="/BrainDump/assets/index-Di6vAI3f.js"></script>
+		<script type="module" crossorigin src="/BrainDump/assets/index-DlnHd_kO.js"></script>
 		<link rel="stylesheet" crossorigin href="/BrainDump/assets/index-Dz0BPrzH.css">
 	</head>
 	<body>
@@ -168,6 +168,18 @@
 			if (e.key === "/" && document.activeElement !== search && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
 				e.preventDefault();
 				search.focus();
+			}
+
+			if (e.key === "Enter" && document.activeElement === search) {
+				e.preventDefault();
+				const firstVisibleLink = Array.from(document.querySelectorAll("#tree a")).find((link) => {
+					const item = link.closest("li");
+					return item && !item.hidden;
+				});
+
+				if (firstVisibleLink) {
+					firstVisibleLink.click();
+				}
 			}
 
 			if (e.key === "Escape" && document.activeElement === search) {
