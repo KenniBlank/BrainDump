@@ -25,8 +25,8 @@
 		};
 		</script>
 		<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" crossorigin="anonymous"></script>
-		<script type="module" crossorigin src="/BrainDump/assets/index-CNIfT6ju.js"></script>
-		<link rel="stylesheet" crossorigin href="/BrainDump/assets/index-C718pqVH.css">
+		<script type="module" crossorigin src="/BrainDump/assets/index-By84VvgP.js"></script>
+		<link rel="stylesheet" crossorigin href="/BrainDump/assets/index-DQvThRwH.css">
 	</head>
 	<body>
 		<header class="site-header">
@@ -47,7 +47,14 @@
 			<button id="sidebar-hide_show" class="sidebar-toggle" aria-label="Toggle sidebar"></button>
 			<article class="content" id="content">
 				<h2>Welcome</h2>
-				<p>Select a post to read.</p>
+				<p>
+					Tips:
+					<ul>
+						<li>'/' can be used to search for posts</li>
+						<li>'alt + a' can be used to toggle sidebar</li>
+						<li>sidebar can be resized</li>
+					</ul>
+				</p>
 			</article>
 		</main>
 
@@ -194,6 +201,11 @@
 			if (isModifierDown && e.key === "a") {
 				toggleBtn.click();
 			}
+
+			if (e.key === "Enter") {
+				const path = getCurrentPostPath();
+				console.log(path);
+			}
 		});
 
 		document.addEventListener("keyup", (e) => {
@@ -203,6 +215,5 @@
 		});
 
 		</script>
-
 	</body>
 </html>
