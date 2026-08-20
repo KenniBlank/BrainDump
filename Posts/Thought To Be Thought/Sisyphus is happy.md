@@ -1,8 +1,8 @@
 # Sisyphus is happy
 
-We must imagine Sisyphus to be happy — no, Sisyphus is happy!
+We must imagine Sisyphus to be happy, no! Sisyphus is happy.
 
-For his act of rebellion in death, Sisyphus was cursed to complete an impossible task i.e push a boulder to a hill's top. He is doomed, and yet he must not waiver in his determination. Even though the task remains impossible, Sisyphus must throw his entire being into it as an act of rebellion—not to conquer the mountain, but to not let the gods win. His only freedom in that situation remains his spirit. By finding joy where there is none, he actively subverts the tyranny of the gods that are set on breaking him.
+For his act of rebellion in death, Sisyphus was cursed to complete an impossible task i.e push a boulder to a hill's top. He is doomed, and yet he must not waiver in his determination. Even though the task remains impossible, Sisyphus must throw his entire being into it as an act of rebellion, not to conquer the mountain, but to not let the gods win. His only freedom in that situation remains his spirit. By finding joy where there is none, he actively subverts the tyranny of the gods that are set on breaking him.
 
 He is defined by not his useless purpose, rather by his everlasting spirit.
 

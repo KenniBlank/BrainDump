@@ -1,7 +1,8 @@
 - External Learning
 	- [RAG-101](<Posts/External Learning/RAG-101.md>)
-- Philosophy
-	- [Sisyphus is happy](<Posts/Philosophy/Sisyphus is happy.md>)
 - Projects
 	- [Brain Dump](<Posts/Projects/Brain Dump.md>)
 	- [Gravitas](<Posts/Projects/Gravitas.md>)
+- Thought To Be Thought
+	- [Duality of Man's Thinking](<Posts/Thought To Be Thought/Duality of Man's Thinking.md>)
+	- [Sisyphus is happy](<Posts/Thought To Be Thought/Sisyphus is happy.md>)
